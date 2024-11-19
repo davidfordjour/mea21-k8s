@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: flask-deployment
+  name: flask
   labels: 
     app: flask
 spec:
@@ -19,16 +19,13 @@ spec:
         image: stratcastor/duo-deploy-flask:latest
         ports:
         - containerPort: 5500
-        env:
-        - name: David
-          value: Magos
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: flask-service
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   selector:
     app: flask
   ports:
