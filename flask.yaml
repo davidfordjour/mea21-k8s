@@ -19,6 +19,9 @@ spec:
         image: stratcastor/duo-deploy-flask:latest
         ports:
         - containerPort: 5500
+        env:
+        - name: David
+          value: Magos
 ---
 apiVersion: v1
 kind: Service
